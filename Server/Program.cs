@@ -3,8 +3,10 @@ using Microsoft.Owin.Cors;
 using Microsoft.Owin.Hosting;
 using Owin;
 using System;
+using System.Configuration;
 using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace Server
 {
@@ -14,8 +16,7 @@ namespace Server
 
         static void Main(string[] args)
         {
-            var port = 8080;
-            Globals.Delay = 800;
+            var port = Int32.Parse(ConfigurationManager.AppSettings["DefaultPort"]); 
 
             if (args.Length > 0)
             {
