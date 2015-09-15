@@ -19,7 +19,7 @@ namespace Server
         static void Main(string[] args)
         {
             var port = 8080;
-            Globals.Delay = 400;
+            Globals.Delay = 800;
 
             if (args.Length > 0)
             {
