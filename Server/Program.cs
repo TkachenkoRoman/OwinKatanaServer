@@ -40,22 +40,7 @@ namespace Server
     }
 
     /// <summary>
-    /// Used by OWIN's startup process. 
-    /// </summary>
-    class Startup
-    {
-        public void Configuration(IAppBuilder app)
-        {
-            app.UseCors(CorsOptions.AllowAll);
-            app.MapSignalR();
-
-            RandomGenerator randomGenerator = new RandomGenerator(Globals.Delay);
-            Task.Factory.StartNew(async () => await randomGenerator.OnRandomMonitor());
-        }
-    }
-    /// <summary>
-    /// Echoes messages sent using the Send message by calling the
-    /// addMessage method on the client. Also reports to the console
+    /// Reports to the console
     /// when clients connect and disconnect.
     /// </summary>
     public class MyHub : Hub
