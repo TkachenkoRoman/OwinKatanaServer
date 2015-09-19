@@ -13,7 +13,8 @@ namespace Server
         // returns 200 to 10000 if parsed
         public static int ParseDelay()
         {
-            string delay = ConfigurationManager.AppSettings["Delay"];
+            //string delay = ConfigurationManager.AppSettings["Delay"];
+            string delay = Environment.GetEnvironmentVariable("DELAY");
             int result = 0;
             try
             {
