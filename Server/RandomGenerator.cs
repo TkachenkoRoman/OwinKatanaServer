@@ -23,7 +23,7 @@ namespace Server
             while (true)
             {
                 await Task.Delay(_pollIntervalMillis);
-                int number = _numberRand.Next(0, 100);
+                int number = _numberRand.Next(0, 50);
 
                 _hubs.Clients.All.broadcastData(number, DateTime.Now);
             }
